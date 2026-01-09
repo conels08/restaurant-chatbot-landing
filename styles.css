@@ -584,6 +584,21 @@ body {
   }
 }
 
+/* CARDS
+–––––––––––––––––
+ */
+
+/* =========================
+   Hero card header polish
+   ========================= */
+.hero__card .card-title {
+  padding-bottom: 0.6rem;
+  /* breathing room */
+  margin-bottom: 0.9rem;
+  /* separation from list */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  /* subtle divider */
+}
 /* =========================
    Card heading polish
    ========================= */
