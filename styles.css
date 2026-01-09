@@ -678,6 +678,18 @@ body {
   }
 }
 
+/* Success message (hidden by default) */
+.form-success {
+  display: none;
+  background: rgba(184, 115, 51, 0.12);
+  border: 1px solid rgba(184, 115, 51, 0.35);
+  color: #5b3412;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
 /* Hide Netlify honeypot field */
 .hidden {
   display: none;
