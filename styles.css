@@ -694,6 +694,12 @@ body {
   font-weight: 600;
 }
 
+/* Right column wrapper so success + form behave as one grid item */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Smooth show/hide animation for success + form */
 .form-success,
 .contact-form {
