@@ -18,9 +18,6 @@ if (params.get("success") === "true") {
   formEl.classList.remove("is-visible");
   formEl.classList.add("is-hidden");
 
-  // Keep the user on the contact section
-  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-
   // Remove the query param but keep hash
   window.history.replaceState(
     {},

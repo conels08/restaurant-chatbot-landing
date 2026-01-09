@@ -684,7 +684,6 @@ body {
 
 /* Success message (hidden by default) */
 .form-success {
-  display: none;
   background: rgba(184, 115, 51, 0.12);
   border: 1px solid rgba(184, 115, 51, 0.35);
   color: #5b3412;
