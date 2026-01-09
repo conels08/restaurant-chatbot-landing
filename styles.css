@@ -670,10 +670,15 @@ body {
   gap: 1rem;
 }
 
-/* Mobile */
+/* Mobile (footer) */
 @media (max-width: 768px) {
   .footer-row {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Hide Netlify honeypot field */
+.hidden {
+  display: none;
 }

@@ -221,31 +221,43 @@
         </div>
     
         <!-- Simple mailto form -->
-        <form class="contact-form" action="mailto:colbynelsen@gmail.com" method="POST" enctype="text/plain">
-          <label>
-            Name
-            <input type="text" name="name" required />
-          </label>
-    
-          <label>
-            Business name
-            <input type="text" name="business" />
-          </label>
-    
-          <label>
-            Email
-            <input type="email" name="email" required />
-          </label>
-    
-          <label>
-            Message
-            <textarea name="message" rows="4"
-              placeholder="What would you like the assistant to help customers with?"></textarea>
-          </label>
-    
-          <button class="btn btn--primary" type="submit">
-            Send message
-          </button>
+        <form 
+          class="contact-form" 
+          name="quote" 
+          method="POST" 
+          data-netlify="true" 
+          netlify-honeypot="bot-field"
+        >
+        <!-- Netlify spam trap (hidden from real users) -->
+        <input type="hidden" name="form-name" value="quote" />
+        <p class="hidden">
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+  
+        <label>
+          Business name
+          <input type="text" name="business" />
+        </label>
+  
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+  
+        <label>
+          Message
+          <textarea name="message" rows="4"
+            placeholder="What would you like the assistant to help customers with?"></textarea>
+        </label>
+  
+        <button class="btn btn--primary" type="submit">
+          Send message
+        </button>
         </form>
       </div>
     </section>
