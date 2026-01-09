@@ -12,6 +12,7 @@ if (params.get("success") === "true") {
   const formEl = document.getElementById("contact-form");
 
   // Show success, hide form (animated)
+  successEl.style.display = "block";
   successEl.classList.remove("is-hidden");
   successEl.classList.add("is-visible");
 
@@ -32,5 +33,10 @@ if (params.get("success") === "true") {
 
     formEl.classList.remove("is-hidden");
     formEl.classList.add("is-visible");
+
+    // After the fade-out finishes, remove success from layout completely
+    setTimeout(() => {
+      successEl.style.display = "none";
+    }, 250);
   }, 6000);
 }
