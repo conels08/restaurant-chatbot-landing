@@ -713,6 +713,15 @@ body {
   transform: translateY(0);
 }
 
+/* Prevent layout flashes: control display via state classes */
+.form-success.is-hidden {
+  display: none;
+}
+
+.form-success.is-visible {
+  display: block;
+}
+
 /* Hide Netlify honeypot field */
 .hidden {
   display: none;

@@ -33,10 +33,5 @@ if (params.get("success") === "true") {
 
     formEl.classList.remove("is-hidden");
     formEl.classList.add("is-visible");
-
-    // After the fade-out finishes, remove success from layout completely
-    setTimeout(() => {
-      successEl.style.display = "none";
-    }, 250);
   }, 6000);
 }
