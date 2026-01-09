@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Assistant for Restaurants & Bars | Colby</title>
+
+  <!-- SEO-friendly description -->
+  <meta name="description"
+    content="I install a simple website assistant (chatbot) on restaurant and bar websites to answer FAQs, guide customers, and capture leads." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  
+  <main id="app">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <!-- Left: Sales copy -->
+        <div class="hero__copy">
+          <p class="badge">Serving Newberg + Greater Portland</p>
+    
+          <h1>
+            Turn your website into a
+            <span class="accent">24/7 assistant</span>
+            for your restaurant or bar.
+          </h1>
+    
+          <p class="subheadline">
+            I install a simple on-site chatbot that answers common questions, guides customers,
+            and helps you get more calls, reservations, and catering inquiries — without adding
+            extra work for your staff.
+          </p>
+    
+          <div class="cta-row">
+            <a class="btn btn--primary" href="#contact">Get a Free Setup Quote</a>
+            <a class="btn btn--ghost" href="#demo">Try the Demo</a>
+          </div>
+    
+          <p class="micro">
+            No paid APIs • Lightweight • Mobile-friendly • Works on your current website
+          </p>
+        </div>
+    
+        <!-- Right: Simple “trust card” -->
+        <div class="hero__card">
+          <h2 class="card-title">What you get</h2>
+    
+          <ul class="checklist">
+            <li>Answers FAQs instantly (hours, parking, menu, reservations)</li>
+            <li>Suggestion buttons customers can tap</li>
+            <li>Lead capture prompt (catering / events)</li>
+            <li>Simple admin-style FAQ updates (no code, optional)</li>
+          </ul>
+    
+          <p class="card-note">
+            You’ll see a live demo below in about 10 seconds.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits" id="benefits">
+      <div class="container">
+        <h2 class="section-title">How this helps your restaurant or bar</h2>
+        <p class="section-subtitle">
+          Customers get answers fast. Your staff gets fewer interruptions. You get more bookings and inquiries.
+        </p>
+    
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <h3>Fewer missed questions</h3>
+            <p>
+              The assistant answers common questions instantly—hours, parking, reservations, menu basics—so customers don’t
+              bounce.
+            </p>
+          </div>
+    
+          <div class="benefit-card">
+            <h3>More reservations & calls</h3>
+            <p>
+              Clear “next steps” buttons guide people to call, book, or ask about events instead of hunting around your
+              site.
+            </p>
+          </div>
+    
+          <div class="benefit-card">
+            <h3>Capture catering & events</h3>
+            <p>
+              The assistant can prompt customers to leave their info for catering, large parties, or private events—so you
+              don’t lose leads.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO SECTION -->
+    <section class="demo" id="demo">
+      <div class="container">
+        <h2 class="section-title">Try the website assistant demo</h2>
+        <p class="section-subtitle">
+          Ask it about hours, reservations, parking, menu, or catering. This is the same style of assistant I install on
+          client sites.
+        </p>
+    
+        <!-- Demo frame / stage -->
+        <div class="demo-stage">
+          <div class="demo-site">
+            <div class="demo-site__topbar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="demo-site__title">Sample Restaurant Website</span>
+            </div>
+    
+            <div class="demo-site__content">
+              <h3>Welcome 👋</h3>
+              <p>
+                This is a sample page to show how the assistant feels on a real website.
+                The chatbot will appear in the bottom-right.
+              </p>
+            </div>
+    
+            <!-- We will mount/embed the chatbot widget inside this page -->
+            <div id="chatbot-mount">
+              <!-- Chatbot root (the widget injects its HTML inside this) -->
+              <div id="chatbot-root"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Simple, transparent pricing</h2>
+        <p class="section-subtitle">
+          One-time setup. No contracts. No ongoing fees unless you want changes later.
+        </p>
+    
+        <div class="pricing-grid">
+          <div class="price-card featured">
+            <h3>Chatbot Setup</h3>
+            <p class="price">$149 – $249</p>
+            <ul>
+              <li>Install chatbot on your website</li>
+              <li>Customize for your hours, menu, reservations</li>
+              <li>Suggestion buttons for common questions</li>
+              <li>Mobile-friendly</li>
+            </ul>
+            <a class="btn btn--primary" href="#contact">Get a quote</a>
+          </div>
+    
+          <div class="price-card">
+            <h3>Optional Add-Ons</h3>
+            <ul>
+              <li>Catering & events lead capture</li>
+              <li>Custom wording / tone</li>
+              <li>Extra FAQs</li>
+              <li>Future updates as your menu changes</li>
+            </ul>
+            <p class="note">Priced per request</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2 class="section-title">About</h2>
+          <p>
+            Hi, I’m <strong>Colby</strong>. I help local restaurants and bars turn their
+            websites into something more useful—by adding a simple assistant that answers
+            customer questions and guides people to take action.
+          </p>
+    
+          <p>
+            I work with businesses around <strong>Newberg and the Greater Portland area</strong>.
+            My goal is to keep things straightforward, affordable, and easy to manage—no
+            confusing software or monthly subscriptions.
+          </p>
+    
+          <p class="about-note">
+            This page is a live example of the kind of assistant I install for clients.
+          </p>
+        </div>
+    
+        <div class="about-card">
+          <h3>Why restaurants & bars</h3>
+          <ul>
+            <li>Staff shouldn’t be stuck answering the same questions</li>
+            <li>Customers want answers fast</li>
+            <li>Missed info = missed reservations and events</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2 class="section-title">Get a free setup quote</h2>
+          <p class="section-subtitle">
+            Tell me a bit about your restaurant or bar and I’ll get back to you.
+          </p>
+    
+          <p class="contact-note">
+            I work with businesses in Newberg and the Greater Portland area.
+          </p>
+        </div>
+    
+        <!-- Simple mailto form -->
+        <form class="contact-form" action="mailto:colbynelsen@gmail.com" method="POST" enctype="text/plain">
+          <label>
+            Name
+            <input type="text" name="name" required />
+          </label>
+    
+          <label>
+            Business name
+            <input type="text" name="business" />
+          </label>
+    
+          <label>
+            Email
+            <input type="email" name="email" required />
+          </label>
+    
+          <label>
+            Message
+            <textarea name="message" rows="4"
+              placeholder="What would you like the assistant to help customers with?"></textarea>
+          </label>
+    
+          <button class="btn btn--primary" type="submit">
+            Send message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p>
+          © <span id="year"></span> Colby • Website Assistant for Restaurants & Bars
+        </p>
+    
+        <p class="footer-links">
+          <a href="#demo">Demo</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Scripts (loaded last so HTML renders first) -->
+  <script src="script.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+
+</html>

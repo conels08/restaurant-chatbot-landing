@@ -1,0 +1,679 @@
+/* =========================
+   Base / Reset
+   ========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #2b2b2b;
+  /* charcoal */
+  background-color: #f7f6f4;
+  /* warm off-white */
+  line-height: 1.6;
+}
+
+/* =========================
+   Variables (brand colors)
+   ========================= */
+:root {
+  --charcoal: #2b2b2b;
+  --copper: #b87333;
+  --copper-dark: #8f5623;
+  --card-bg: #ffffff;
+}
+
+/* =========================
+   Layout helpers
+   ========================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* =========================
+   Hero section
+   ========================= */
+.hero {
+  background: linear-gradient(180deg,
+      #ffffff 0%,
+      #f2efe9 100%);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--copper);
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--copper);
+}
+
+.subheadline {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn--primary {
+  background-color: var(--copper);
+  color: white;
+}
+
+.btn--primary:hover {
+  background-color: var(--copper-dark);
+}
+
+.btn--ghost {
+  border: 1px solid var(--copper);
+  color: var(--copper);
+}
+
+.btn--ghost:hover {
+  background-color: rgba(184, 115, 51, 0.1);
+}
+
+.micro {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* =========================
+   Trust card
+   ========================= */
+.hero__card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.checklist {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.checklist li {
+  margin-bottom: 0.5rem;
+}
+
+.card-note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* =========================
+   Mobile (hero section)
+   ========================= */
+@media (max-width: 768px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   Benefits section
+   ========================= */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #555;
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.benefit-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.benefit-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+
+.benefit-card p {
+  color: #444;
+}
+
+/* =========================
+   Mobile (benefits section)
+   ========================= */
+@media (max-width: 768px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Demo section
+   ========================= */
+.demo-stage {
+  margin-top: 1.25rem;
+}
+
+.demo-site {
+  position: relative;
+  /* so the chatbot can anchor nicely */
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  min-height: 560px;
+  /* more room so the chatbot panel isn't clipped */
+}
+
+.demo-site__topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.75rem 1rem;
+  background: #1f1f1f;
+  color: #f3f3f3;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #777;
+  display: inline-block;
+}
+
+.demo-site__title {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.demo-site__content {
+  padding: 1.5rem;
+}
+
+.demo-site__content h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Chatbot widget styles
+   (kept lightweight + "warm premium")
+   ========================= */
+
+/* Mount area inside the demo "site" */
+#chatbot-root {
+  position: absolute;
+  /* anchor inside .demo-site */
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  font-size: 14px;
+}
+
+/* Launcher button */
+.chatbot-launcher {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: var(--copper);
+  color: white;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+.chatbot-launcher:hover {
+  background: var(--copper-dark);
+}
+
+/* Panel container */
+.chatbot-panel {
+  position: absolute;
+  right: 0;
+  bottom: 52px;
+  width: 330px;
+  max-width: calc(100vw - 32px);
+  height: 420px;
+
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+
+  display: none;
+  /* hidden until open */
+  overflow: hidden;
+}
+
+/* Open state (your JS toggles .is-open) */
+.chatbot-panel.is-open {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.chatbot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 12px;
+  background: #1f1f1f;
+  color: #f3f3f3;
+}
+
+.chatbot-title strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.chatbot-title span {
+  display: block;
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+.chatbot-close {
+  border: none;
+  background: transparent;
+  color: #f3f3f3;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.chatbot-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Messages area */
+.chatbot-messages {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+  background: #fbfaf8;
+}
+
+.chatbot-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.chatbot-row.user {
+  justify-content: flex-end;
+}
+
+.chatbot-bubble {
+  max-width: 85%;
+  border-radius: 14px;
+  padding: 10px 12px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* User bubble */
+.chatbot-row.user .chatbot-bubble {
+  background: var(--copper);
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+/* Bot bubble */
+.chatbot-row.bot .chatbot-bubble {
+  background: white;
+  color: #2b2b2b;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom-left-radius: 6px;
+}
+
+/* Timestamp */
+.chatbot-meta {
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Suggestions */
+.chatbot-suggest-row {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chatbot-suggest {
+  border: 1px solid rgba(184, 115, 51, 0.45);
+  background: rgba(184, 115, 51, 0.08);
+  color: #6a3d14;
+  cursor: pointer;
+
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.chatbot-suggest:hover {
+  background: rgba(184, 115, 51, 0.14);
+}
+
+/* Input bar */
+.chatbot-inputbar {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.chatbot-input {
+  flex: 1;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  outline: none;
+}
+
+.chatbot-input:focus {
+  border-color: rgba(184, 115, 51, 0.6);
+  box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.18);
+}
+
+.chatbot-send {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  color: white;
+}
+
+.chatbot-send:hover {
+  opacity: 0.92;
+}
+
+/* Typing indicator */
+.typing {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #999;
+  display: inline-block;
+  animation: typingPulse 1s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typingPulse {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Pricing section
+   ========================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.price-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.price-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--copper);
+  margin-bottom: 1rem;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 1.25rem;
+}
+
+.price-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+.featured {
+  border: 2px solid rgba(184, 115, 51, 0.4);
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Mobile (pricing section)*/
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   About section
+   ========================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+}
+
+.about p {
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+.about-note {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.about-card ul {
+  list-style: none;
+}
+
+.about-card li {
+  margin-bottom: 0.6rem;
+}
+
+/* Mobile (about section)*/
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Contact section
+   ========================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-note {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contact-form {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  display: grid;
+  gap: 0.9rem;
+}
+
+.contact-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.6rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(184, 115, 51, 0.6);
+  box-shadow: 0 0 0 3px rgba(184, 115, 51, 0.18);
+}
+
+/* Mobile (contact section)*/
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Footer
+   ========================= */
+.footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer a {
+  color: var(--copper);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
