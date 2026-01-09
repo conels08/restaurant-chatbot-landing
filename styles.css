@@ -687,6 +687,7 @@ body {
   padding: 0.9rem 1rem;
   border-radius: 10px;
   margin-bottom: 1rem;
+  scroll-margin-top: 24px;
   font-weight: 600;
 }
 
