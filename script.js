@@ -1,19 +1,39 @@
 // Auto-update footer year
 document.getElementById("year").textContent = new Date().getFullYear();
+// Default animation states
+document.getElementById("form-success").classList.add("is-hidden");
+document.getElementById("contact-form").classList.add("is-visible");
 
 // Show success message if redirected back from Netlify Forms
 // Show success message if redirected back from Netlify Forms
 const params = new URLSearchParams(window.location.search);
 if (params.get("success") === "true") {
-  document.getElementById("form-success").style.display = "block";
+  const successEl = document.getElementById("form-success");
+  const formEl = document.getElementById("contact-form");
 
-  // Keep the user on the contact section (Netlify may not always keep the hash)
+  // Show success, hide form (animated)
+  successEl.classList.remove("is-hidden");
+  successEl.classList.add("is-visible");
+
+  formEl.classList.remove("is-visible");
+  formEl.classList.add("is-hidden");
+
+  // Keep the user on the contact section
   document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 
-  // Remove the query param but KEEP the hash so the page doesn't jump to the top
+  // Remove the query param but keep hash
   window.history.replaceState(
     {},
     document.title,
     window.location.pathname + window.location.hash
   );
+
+  // After 6 seconds, bring the form back (animated)
+  setTimeout(() => {
+    successEl.classList.remove("is-visible");
+    successEl.classList.add("is-hidden");
+
+    formEl.classList.remove("is-hidden");
+    formEl.classList.add("is-visible");
+  }, 6000);
 }

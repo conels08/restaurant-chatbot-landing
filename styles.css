@@ -678,6 +678,10 @@ body {
   }
 }
 
+/* ===============
+   FORM  
+   =============== */
+
 /* Success message (hidden by default) */
 .form-success {
   display: none;
@@ -689,6 +693,25 @@ body {
   margin-bottom: 1rem;
   scroll-margin-top: 24px;
   font-weight: 600;
+}
+
+/* Smooth show/hide animation for success + form */
+.form-success,
+.contact-form {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* Hidden state */
+.is-hidden {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+/* Visible state */
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Hide Netlify honeypot field */
