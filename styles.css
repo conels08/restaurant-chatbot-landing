@@ -585,6 +585,18 @@ body {
 }
 
 /* =========================
+   Card heading polish
+   ========================= */
+
+/* Applies to pricing + about cards */
+.price-card h3,
+.about-card h3 {
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
    Contact section
    ========================= */
 .contact-grid {
