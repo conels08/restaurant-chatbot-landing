@@ -505,6 +505,9 @@ body {
   border-radius: 12px;
   padding: 1.75rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .price-card h3 {
@@ -516,6 +519,14 @@ body {
   font-weight: 800;
   color: var(--copper);
   margin-bottom: 1rem;
+}
+
+/* Small suffix for /month */
+.price-suffix {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+  margin-left: 0.25rem;
 }
 
 .price-card ul {
@@ -534,6 +545,43 @@ body {
 .note {
   font-size: 0.85rem;
   color: #666;
+}
+
+/* =========================
+   Pricing spacing polish
+   ========================= */
+
+/* Give buttons breathing room inside price cards */
+.price-card .btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Notes need a little separation and readability */
+.price-card .note {
+  margin-top: 0.75rem;
+  line-height: 1.45;
+}
+
+/* The callout box should not crowd the list */
+.price-card .note.callout {
+  margin: 0.75rem 0 1rem;
+}
+
+/* Subtle callout inside pricing card */
+.note.callout {
+  background: rgba(184, 115, 51, 0.10);
+  border: 1px solid rgba(184, 115, 51, 0.25);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  color: #5b3412;
+}
+
+/* Keeps the "bottom area" of pricing cards neat */
+.card-cta {
+  margin-top: auto;
+  /* pushes CTA to bottom of card */
 }
 
 /* Mobile (pricing section)*/

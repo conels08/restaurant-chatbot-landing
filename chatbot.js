@@ -10,7 +10,7 @@
    1) Widget configuration
 ---------------------------- */
 const CHATBOT_CONFIG = {
-  botName: "Table Helper",
+  botName: "Site Assistant",
   botSubtitle: "Quick answers: hours • menu • reservations",
   // Later, when backend exists, set useBackend = true
   useBackend: false,
